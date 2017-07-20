@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using SymbolTables.Bases;
 using SymbolTables.Interfaces;
@@ -11,38 +11,38 @@ namespace SymbolTables.SequentialSearch
     {
         private Node<K, V> _head;
 
-		public override void Put(K key, V @value)
-		{
-			if (IsEmpty())
-			{
-				_head = new Node<K, V>();
-				_head.Key = key;
-				_head.Value = @value;
+        public override void Put(K key, V @value)
+        {
+            if (IsEmpty())
+            {
+                _head = new Node<K, V>();
+                _head.Key = key;
+                _head.Value = @value;
 
-				return;
-			}
+                return;
+            }
 
-			Node<K, V> node = _head;
+            Node<K, V> node = _head;
 
-			while (node != null)
-			{
-				if (node.Key.CompareTo(key) == 0)
-				{
-					node.Value = @value;
+            while (node != null)
+            {
+                if (node.Key.CompareTo(key) == 0)
+                {
+                    node.Value = @value;
 
-					return;
-				}
+                    return;
+                }
 
-				node = node.Next;
-			}
+                node = node.Next;
+            }
 
-			node = new Node<K, V>();
-			node.Key = key;
-			node.Value = @value;
-			node.Next = _head;
+            node = new Node<K, V>();
+            node.Key = key;
+            node.Value = @value;
+            node.Next = _head;
 
-			_head = node;
-		}
+            _head = node;
+        }
 
         public override V Get(K key)
         {
@@ -73,8 +73,8 @@ namespace SymbolTables.SequentialSearch
 
             while (node != null)
             {
-				if (node.Key.CompareTo(key) == 0)
-				{
+                if (node.Key.CompareTo(key) == 0)
+                {
                     if (node.Next == null)
                     {
                         if (previous == null)
@@ -94,7 +94,7 @@ namespace SymbolTables.SequentialSearch
                     }
 
                     return;
-				}
+                }
 
                 previous = node;
                 node = node.Next;
@@ -122,8 +122,8 @@ namespace SymbolTables.SequentialSearch
             return size;
         }
 
-		public override IEnumerable<K> Keys()
-		{
+        public override IEnumerable<K> Keys()
+        {
             if (IsEmpty())
             {
                 return null;
@@ -142,6 +142,6 @@ namespace SymbolTables.SequentialSearch
             }
 
             return keys;
-		}
+        }
     }
 }
