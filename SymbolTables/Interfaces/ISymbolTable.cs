@@ -1,12 +1,12 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace SymbolTables.Interfaces
 {
     public interface ISymbolTable<K, V>
         where K : IComparable<K>
-		where V : class
-	{
+        where V : class
+    {
         /// <summary>
         /// Inserts the key-value pair.
         /// If the key exists, the value will be replaced.
@@ -14,20 +14,20 @@ namespace SymbolTables.Interfaces
         /// </summary>
 		void Put(K key, V @value);
 
-		/// <summary>
-		/// Gets the value associated with the specified key.
-		/// </summary>
-		V Get(K key);
+        /// <summary>
+        /// Gets the value associated with the specified key.
+        /// </summary>
+        V Get(K key);
 
         /// <summary>
         /// Deletes the specified key.
         /// </summary>
 		void Delete(K key);
 
-		/// <summary>
-		/// Checks if the specified key exists.
-		/// </summary>
-		bool Contains(K key);
+        /// <summary>
+        /// Checks if the specified key exists.
+        /// </summary>
+        bool Contains(K key);
 
         /// <summary>
         /// Checks if the symbol table contains any key-value pairs.
@@ -43,5 +43,5 @@ namespace SymbolTables.Interfaces
         /// Returns a collection of keys stored.
         /// </summary>
 		IEnumerable<K> Keys();
-	}
+    }
 }
