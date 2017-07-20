@@ -12,30 +12,30 @@ namespace SymbolTables.Interfaces
         /// </summary>
         K Min();
 
-		/// <summary>
-		/// Returns the largest key.
-		/// </summary>
-		K Max();
+        /// <summary>
+        /// Returns the largest key.
+        /// </summary>
+        K Max();
 
-		/// <summary>
-		/// Returns the largest key less than or equal to the specified key.
-		/// </summary>
-		K Floor(K key);
+        /// <summary>
+        /// Returns the largest key less than or equal to the specified key.
+        /// </summary>
+        K Floor(K key);
 
-		/// <summary>
-		/// Returns the smallest key greater than or equal to the specified key.
-		/// </summary>
-		K Ceiling(K key);
+        /// <summary>
+        /// Returns the smallest key greater than or equal to the specified key.
+        /// </summary>
+        K Ceiling(K key);
 
-		/// <summary>
-		/// Returns the number of keys smaller than the specified key.
-		/// </summary>
-		int Rank(K key);
+        /// <summary>
+        /// Returns the number of keys smaller than the specified key.
+        /// </summary>
+        int Rank(K key);
 
-		/// <summary>
-		/// Returns the key of rank k.
-		/// </summary>
-		K Select(int k);
+        /// <summary>
+        /// Returns the key of rank k.
+        /// </summary>
+        K Select(int k);
 
         /// <summary>
         /// Deletes the smallest key.
@@ -52,9 +52,9 @@ namespace SymbolTables.Interfaces
         /// </summary>
         int Size(K low, K high);
 
-		/// <summary>
-		/// Returns the keys between the specified range of keys in sorted order.
-		/// </summary>
-		IEnumerable<K> Keys(K low, K high);
+        /// <summary>
+        /// Returns the keys between the specified range of keys in sorted order.
+        /// </summary>
+        IEnumerable<K> Keys(K low, K high);
     }
 }
