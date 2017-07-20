@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using SymbolTables.Interfaces;
 
@@ -12,10 +12,10 @@ namespace SymbolTables.Bases
 
         public abstract V Get(K key);
 
-		public virtual void Delete(K key)
-		{
+        public virtual void Delete(K key)
+        {
             Put(key, null);
-		}
+        }
 
         public bool Contains(K key)
         {
