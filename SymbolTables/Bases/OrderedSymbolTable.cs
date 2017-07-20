@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using SymbolTables.Interfaces;
 
@@ -20,28 +20,28 @@ namespace SymbolTables.Bases
 
         public abstract K Select(int k);
 
-		public virtual void DeleteMin()
-		{
+        public virtual void DeleteMin()
+        {
             if (IsEmpty())
             {
                 // Throw an exception.
             }
 
             Delete(Min());
-		}
+        }
 
         public virtual void DeleteMax()
         {
-			if (IsEmpty())
-			{
-				// Throw an exception.
-			}
+            if (IsEmpty())
+            {
+                // Throw an exception.
+            }
 
             Delete(Max());
         }
 
-		public virtual int Size(K low, K high)
-		{
+        public virtual int Size(K low, K high)
+        {
             if (high.CompareTo(low) < 0)
             {
                 return 0;
@@ -54,7 +54,7 @@ namespace SymbolTables.Bases
             {
                 return Rank(high) - Rank(low);
             }
-		}
+        }
 
         public override IEnumerable<K> Keys()
         {
