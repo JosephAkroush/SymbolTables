@@ -95,6 +95,7 @@ namespace SymbolTablesTests
             Person person3 = new Person("Tom", "Cruise");
 
             IEnumerable<SocialSecurityNumber> expected = new[] { ssn1, ssn2, ssn3 };
+            int expectedSize = 3;
 
             // Act
 
@@ -104,9 +105,10 @@ namespace SymbolTablesTests
             target.Put(ssn3, person3);
 
             IEnumerable<SocialSecurityNumber> actual = target.Keys();
+            int actualSize = target.Size();
 
             // Assert
-            Assert.Equal(expected.Count(), actual.Count());
+            Assert.Equal(expectedSize, actualSize);
             Assert.True(actual.Count(x => x.SerialNumber.Equals("3333")) == 1);
             Assert.True(actual.Count(x => x.SerialNumber.Equals("4444")) == 1);
             Assert.True(actual.Count(x => x.SerialNumber.Equals("7890")) == 1);
@@ -127,7 +129,6 @@ namespace SymbolTablesTests
             Person person2 = new Person("Jane", "Smith");
             Person person3 = new Person("Tom", "Cruise");
 
-            IEnumerable<SocialSecurityNumber> expectedKeys = new[] { ssn2 };
             int expectedSize = 0;
 
             // Act
@@ -145,10 +146,6 @@ namespace SymbolTablesTests
             int actualSize = target.Size();
 
             // Assert
-            //Assert.Equal(expectedKeys.Count(), actualKeys.Count());
-            //Assert.True(actualKeys.Where(x => x.SerialNumber.Equals("3333")).Count() == 0);
-            //Assert.True(actualKeys.Where(x => x.SerialNumber.Equals("4444")).Count() == 1);
-            //Assert.True(actualKeys.Where(x => x.SerialNumber.Equals("7890")).Count() == 0);
             Assert.Null(actualKeys);
             Assert.Equal(expectedSize, actualSize);
         }

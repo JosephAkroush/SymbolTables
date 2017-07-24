@@ -59,7 +59,7 @@ namespace SymbolTables.BinarySearch
 
         public override void Delete(K key)
         {
-            base.Delete(key);
+            throw new NotImplementedException();
         }
 
         public override int Size()
@@ -124,6 +124,11 @@ namespace SymbolTables.BinarySearch
 
         public override IEnumerable<K> Keys(K low, K high)
         {
+            if (IsEmpty())
+            {
+                return null;
+            }
+
             int lowRank = Rank(low);
             int highRank = Rank(high);
             List<K> keys = new List<K>();
