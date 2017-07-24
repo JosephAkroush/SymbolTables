@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using SymbolTables.Bases;
-using SymbolTables.Interfaces;
 
 namespace SymbolTables.SequentialSearch
 {
-    public class SequentialSearchSymbolTable<K, V> : SymbolTable<K, V>, ISymbolTable<K, V>
+    public class SequentialSearchSymbolTable<K, V> : SymbolTable<K, V>
         where K : IComparable<K>
         where V : class
     {
         private Node<K, V> _head;
 
-        public override void Put(K key, V @value)
+        public override void Put(K key, V value)
         {
             if (IsEmpty())
             {
@@ -28,7 +27,7 @@ namespace SymbolTables.SequentialSearch
             {
                 if (node.Key.CompareTo(key) == 0)
                 {
-                    node.Value = @value;
+                    node.Value = value;
 
                     return;
                 }
@@ -38,7 +37,7 @@ namespace SymbolTables.SequentialSearch
 
             node = new Node<K, V>();
             node.Key = key;
-            node.Value = @value;
+            node.Value = value;
             node.Next = _head;
 
             _head = node;

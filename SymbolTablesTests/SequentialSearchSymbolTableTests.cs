@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using Domain;
-using SymbolTables;
 using SymbolTables.SequentialSearch;
 using Xunit;
 
@@ -105,9 +103,9 @@ namespace SymbolTablesTests
 
             // Assert
             Assert.Equal(expected.Count(), actual.Count());
-            Assert.True(actual.Where(x => x.SerialNumber.Equals("3333")).Count() == 1);
-            Assert.True(actual.Where(x => x.SerialNumber.Equals("4444")).Count() == 1);
-            Assert.True(actual.Where(x => x.SerialNumber.Equals("7890")).Count() == 1);
+            Assert.True(actual.Count(x => x.SerialNumber.Equals("3333")) == 1);
+            Assert.True(actual.Count(x => x.SerialNumber.Equals("4444")) == 1);
+            Assert.True(actual.Count(x => x.SerialNumber.Equals("7890")) == 1);
         }
 
         [Fact]

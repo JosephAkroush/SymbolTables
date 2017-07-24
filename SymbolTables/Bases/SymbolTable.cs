@@ -8,7 +8,7 @@ namespace SymbolTables.Bases
         where K : IComparable<K>
         where V : class
     {
-        public abstract void Put(K key, V @value);
+        public abstract void Put(K key, V value);
 
         public abstract V Get(K key);
 

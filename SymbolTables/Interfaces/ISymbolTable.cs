@@ -12,7 +12,7 @@ namespace SymbolTables.Interfaces
         /// If the key exists, the value will be replaced.
         /// If the value is null, the key will be removed.
         /// </summary>
-		void Put(K key, V @value);
+		void Put(K key, V value);
 
         /// <summary>
         /// Gets the value associated with the specified key.
