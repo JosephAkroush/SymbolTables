@@ -3,16 +3,14 @@ using System.Collections.Generic;
 
 namespace SymbolTables.Interfaces
 {
-    public interface ISymbolTable<K, V>
-        where K : IComparable<K>
-        where V : class
+    public interface ISymbolTable<K, V> where K : IComparable<K>
     {
         /// <summary>
         /// Inserts the key-value pair.
         /// If the key exists, the value will be replaced.
         /// If the value is null, the key will be removed.
         /// </summary>
-		void Put(K key, V value);
+        void Put(K key, V value);
 
         /// <summary>
         /// Gets the value associated with the specified key.
@@ -22,7 +20,7 @@ namespace SymbolTables.Interfaces
         /// <summary>
         /// Deletes the specified key.
         /// </summary>
-		void Delete(K key);
+        void Delete(K key);
 
         /// <summary>
         /// Checks if the specified key exists.
@@ -32,16 +30,16 @@ namespace SymbolTables.Interfaces
         /// <summary>
         /// Checks if the symbol table contains any key-value pairs.
         /// </summary>
-		bool IsEmpty();
+        bool IsEmpty();
 
         /// <summary>
         /// Returns the number of key-value pairs.
         /// </summary>
-		int Size();
+        int Size();
 
         /// <summary>
         /// Returns a collection of keys stored.
         /// </summary>
-		IEnumerable<K> Keys();
+        IEnumerable<K> Keys();
     }
 }

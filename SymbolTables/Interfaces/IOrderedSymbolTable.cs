@@ -3,9 +3,7 @@ using System.Collections.Generic;
 
 namespace SymbolTables.Interfaces
 {
-    public interface IOrderedSymbolTable<K, V> : ISymbolTable<K, V>
-        where K : IComparable<K>
-        where V : class
+    public interface IOrderedSymbolTable<K, V> : ISymbolTable<K, V> where K : IComparable<K>
     {
         /// <summary>
         /// Returns the smallest key.

@@ -4,9 +4,7 @@ using SymbolTables.Interfaces;
 
 namespace SymbolTables.Bases
 {
-    public abstract class OrderedSymbolTable<K, V> : SymbolTable<K, V>, IOrderedSymbolTable<K, V>
-        where K : IComparable<K>
-        where V : class
+    public abstract class OrderedSymbolTable<K, V> : SymbolTable<K, V>, IOrderedSymbolTable<K, V> where K : IComparable<K>
     {
         public abstract K Min();
 

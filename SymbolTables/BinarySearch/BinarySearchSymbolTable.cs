@@ -4,9 +4,7 @@ using SymbolTables.Bases;
 
 namespace SymbolTables.BinarySearch
 {
-    public class BinarySearchSymbolTable<K, V> : OrderedSymbolTable<K, V>
-        where K : IComparable<K>
-        where V : class
+    public class BinarySearchSymbolTable<K, V> : OrderedSymbolTable<K, V> where K : IComparable<K>
     {
         private readonly K[] _keys;
         private readonly V[] _values;

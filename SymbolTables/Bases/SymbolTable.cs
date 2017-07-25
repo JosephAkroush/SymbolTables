@@ -4,18 +4,13 @@ using SymbolTables.Interfaces;
 
 namespace SymbolTables.Bases
 {
-    public abstract class SymbolTable<K, V> : ISymbolTable<K, V>
-        where K : IComparable<K>
-        where V : class
+    public abstract class SymbolTable<K, V> : ISymbolTable<K, V> where K : IComparable<K>
     {
         public abstract void Put(K key, V value);
 
         public abstract V Get(K key);
 
-        public virtual void Delete(K key)
-        {
-            Put(key, null);
-        }
+        public abstract void Delete(K key);
 
         public bool Contains(K key)
         {

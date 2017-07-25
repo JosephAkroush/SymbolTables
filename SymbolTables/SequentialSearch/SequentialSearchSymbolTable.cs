@@ -4,9 +4,7 @@ using SymbolTables.Bases;
 
 namespace SymbolTables.SequentialSearch
 {
-    public class SequentialSearchSymbolTable<K, V> : SymbolTable<K, V>
-        where K : IComparable<K>
-        where V : class
+    public class SequentialSearchSymbolTable<K, V> : SymbolTable<K, V> where K : IComparable<K>
     {
         private Node<K, V> _head;
 
@@ -57,7 +55,7 @@ namespace SymbolTables.SequentialSearch
                 node = node.Next;
             }
 
-            return null;
+            return default(V);
         }
 
         public override void Delete(K key)
