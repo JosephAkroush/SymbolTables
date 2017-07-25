@@ -4,7 +4,7 @@ using SymbolTables.Bases;
 
 namespace SymbolTables.SequentialSearch
 {
-    public class SequentialSearchSymbolTable<K, V> : SymbolTable<K, V> where K : IComparable<K>
+    public class LinkedListSymbolTable<K, V> : SymbolTable<K, V> where K : IComparable<K>
     {
         private Node<K, V> _head;
 
@@ -14,7 +14,7 @@ namespace SymbolTables.SequentialSearch
             {
                 _head = new Node<K, V>();
                 _head.Key = key;
-                _head.Value = @value;
+                _head.Value = value;
 
                 return;
             }

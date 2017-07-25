@@ -57,7 +57,27 @@ namespace SymbolTables.BinarySearch
 
         public override void Delete(K key)
         {
-            throw new NotImplementedException();
+            if (IsEmpty())
+            {
+                return;
+            }
+
+            int rank = Rank(key);
+
+            if (rank == _size || _keys[rank].CompareTo(key) != 0)
+            {
+                return;
+            }
+
+            for (int i = rank; i < _size - 1; i++)
+            {
+                _keys[i] = _keys[i + 1];
+                _values[i] = _values[i + 1];
+            }
+
+            _size--;
+            _keys[_size] = default(K);
+            _values[_size] = default(V);
         }
 
         public override int Size()
@@ -72,12 +92,30 @@ namespace SymbolTables.BinarySearch
 
         public override K Max()
         {
+            if (_size == 0)
+            {
+                return _keys[0];
+            }
+
             return _keys[_size - 1];
         }
 
         public override K Floor(K key)
         {
-            throw new NotImplementedException();
+            int rank = Rank(key);
+
+            if (rank < _size && key.CompareTo(_keys[rank]) == 0)
+            {
+                return _keys[rank];
+            }
+            else if (rank == 0)
+            {
+                return default(K);
+            }
+            else
+            {
+                return _keys[rank - 1];
+            }
         }
 
         public override K Ceiling(K key)
